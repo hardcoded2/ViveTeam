@@ -1,0 +1,62 @@
+Space team
+
+Plan
+1) Captain mess setup for local area network auto-connect
+2) Set up graphical buttons and levers with basic interactions
+3) Name generator with two words - seed word lists dune and other space terms http://www.techrepublic.com/blog/geekend/75-words-every-sci-fi-fan-should-know/
+4) function to generate these prefabs
+5) thing that calls the generator and lays them out on a plane
+	a) Optionally, could just create a layout prefab that then would get populated, but would not work in the desired end case where you get non-uniform layouts
+6) ensure all button names are unique per game
+7) spawn prefab for player
+
+9) Track per-player "score"
+10) show player score up to the breaking point as particle effects around the buttons
+11) Unet fallback/auto-switch for internet based fallback
+
+
+Punted:
+1) Lever tasks -  
+				   integrate rigidbodies and linear drive this is not a first pass feature
+                   query current state of switches to see if command should be "on" or "off" - can defer
+
+tech - button normalizedInstintaniousForceTowardsOrigin  is 0.01 per frame with current settings, meaning the actual movement per frame is "(2.3, -14.6, 61.1)"
+
+spaceteam notes
+not sure how to design button
+bought 3d button package for reference and it even punted on most of these issues.
+oh well, it wil sereer as a guide for how to restrict some of this stuff
+
+I guess the only button depression is from this experement.
+<ba dum tish>
+
+
+just going to add a spring joint to the button capsule and let it float back up if not being mashed
+nope, even that seems too fiddly. physics is always more complicated than you think, would need to cheat the scene too much by setting up too many fake objects
+just going to set up a float value that will let the object go back "up" 
+
+going to cheat the lever by using parent gameobjects to house the rigidbody
+actually all the rigidbody stuff is going to cause me tons of pain. because you could pluck out the button. not something I want the user to do
+ok, only physics that I control on enter/exit/stay/etc maybe. let's give this a go with the lever
+
+wa
+
+
+
+Reference:
+steamvr interaction tutorial is a good place to start for steamvr
+https://www.youtube.com/watch?v=EPQougskzn8
+
+Y is up in steam examples, where z and x are directional on the 2d plane. I thought this was correct, just double checking.
+
+
+later:
+
+
+decided to acapella the sfx since Zombie farm on ios did this and it was awesome. So why not give it a go.
+
+
+offtopic:
+noticed one of the top button scripts on assetstore likely uses the schell games runtime->editor reflection trick to pause the game using the editor flow and/or by throwing an exception, a trick used to break out of infinite recurison
+
+watch is an option of advanced inpsector
