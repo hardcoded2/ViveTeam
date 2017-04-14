@@ -592,8 +592,8 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: ad8ad218-14da-4da6-81b1-e7153bf6d71e
+  projectName: spaceteam
+  organizationId: hardcoded2
   cloudEnabled: 0
   enableNewInputSystem: 0

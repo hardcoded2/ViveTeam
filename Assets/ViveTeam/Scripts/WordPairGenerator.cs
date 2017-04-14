@@ -2,21 +2,11 @@
 using UnityEngine;
 
 public class WordPairGenerator : MonoBehaviour {
-	private List<WordBank> _wordBanks;
-
-	private void Init() {
-		_wordBanks = new List<WordBank>(gameObject.GetComponentsInChildren<WordBank>());
-	}
-
-	private void Start() //let the children wake up first, so call in start instead of awake
-	{
-		Init();
-	}
+	[SerializeField] private List<WordBank> _wordBanks;
 
 	//quickly test in editor only - add the component to a parent, then click the wheel to the upper right of the component, and you'll see "Test word generation" as an option
 	[ContextMenu("Test Word Generation")]
 	private void TestWordGeneration() {
-		Init();
 		var uniqueStringsOutOfTarget = new HashSet<string>();
 		var targetNumberOfPairs = 100;
 		for(var i = 0;i < targetNumberOfPairs;i++) {

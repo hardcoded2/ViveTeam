@@ -1240,6 +1240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fb3fbf4d15d8a4d94c1c434b5db91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wordBanks:
+  - {fileID: 2146724432}
+  - {fileID: 431095302}
+  - {fileID: 1748740697}
 --- !u!1 &1662858858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1380,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
