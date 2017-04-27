@@ -15,6 +15,7 @@ public class NetworkedPanelCreator : MonoBehaviour {
 	[ContextMenu("Test setting word pairs on local client prefab")]
 	private void SetLocalPairsForDebugging()
 	{
-		FindObjectOfType<PanelClientSideCreator>().TEST_ONLY_SetButtonsForThisClient(GetWordPairs(9).ToArray());
+		FindObjectOfType<PanelClientSideCreator>().SetButtonsNonRPC(GetWordPairs(9).ToArray());
 	}
+
 }
