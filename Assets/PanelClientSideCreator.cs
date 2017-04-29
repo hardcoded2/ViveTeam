@@ -38,7 +38,7 @@ public class PanelClientSideCreator : NetworkBehaviour
 	private int _myClientID = -1;
 
 	[TargetRpc]
-	public void RpcSetButtonsForThisClient(NetworkConnection targetIgnoreMe, int myClientIdFromHost, string[] buttonNames)
+	public void TargetSetButtonsForThisClient(NetworkConnection targetIgnoreMe, int myClientIdFromHost, string[] buttonNames)
 	{
 		_myClientID = myClientIdFromHost;
 		SetButtonsNonRPC(buttonNames); //re-use functionality that is tested, and still maintain the unet contract
@@ -124,6 +124,8 @@ public class PanelClientSideCreator : NetworkBehaviour
 		foreach (var networkConnection in NetworkServer.connections)
 		{
 			if(networkConnection == null)
+				continue;
+			if(!networkConnection.isConnected && !networkConnection.isReady)
 				continue;
 			connectedClients.Add(connectionId, networkConnection);
 			connectionId++;
