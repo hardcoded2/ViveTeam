@@ -13,8 +13,6 @@ public class PanelClientSideCreator : NetworkBehaviour
 	[SyncVar]
 	public int ShipHealth; //When zero, the ship dies 
 
-	private List<string> _myButtonNames;
-
 	[Serializable]
 	public class CommandForThisClient //or does unet only serialize arbitrary structs?
 	{
@@ -32,7 +30,6 @@ public class PanelClientSideCreator : NetworkBehaviour
 			var labelledButton = _buttons[i];
 			labelledButton.SetText(buttonNames[i]);
 		}
-		_myButtonNames = new List<string>(buttonNames);
 	}
 
 	private int _myClientID = -1;
@@ -97,11 +94,6 @@ public class PanelClientSideCreator : NetworkBehaviour
 		//TODO: adjust smoke/havoc based on totla number of missed commands now
 	}
 
-	//TODO: find out what is the exact trigger for when another client joins
-	public void Pregame()
-	{
-		
-	}
 
 	private Dictionary<int, List<string>> _clientConnectionIdToWordsTheyOwn;
 
