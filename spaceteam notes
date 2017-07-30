@@ -20,7 +20,7 @@ Punted:
 				   integrate rigidbodies and linear drive this is not a first pass feature
                    query current state of switches to see if command should be "on" or "off" - can defer
 
-tech - button normalizedInstintaniousForceTowardsOrigin  is 0.01 per frame with current settings, meaning the actual movement per frame is "(2.3, -14.6, 61.1)"
+tech - button normalizedInstintaniousForceTowardsOrigin  is 0.01 per frame with current settings, meaning the actual movement per frame is "(2.3, -14.6, 61.1)"... probably too big
 
 spaceteam notes
 not sure how to design button
